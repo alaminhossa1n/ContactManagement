@@ -4,7 +4,7 @@ import ChartsAnsMaps from "./ChartsAnsMaps";
 
 const Dashboard = () => {
 
-    const [selectedOption, setSelectedOption] = useState('addProduct');
+    const [selectedOption, setSelectedOption] = useState('contact');
 
     const handleOptionChange = (option) => {
         setSelectedOption(option);

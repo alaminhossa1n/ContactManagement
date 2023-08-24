@@ -7,15 +7,15 @@ import 'leaflet/dist/leaflet.css';
 
 const ChartsAnsMaps = () => {
 
-    const [worldWideData, ] = UseWorldWideData();
+    const [worldWideData, worldWideDataIsLoading] = UseWorldWideData();
     const [caseWithDatesData, caseWithDatesDataLoading] = UseCaseWithDatesData();
-    const [countrySpecificData, ] = UseCountrySpecificData();
+    const [countrySpecificData, countryLoading] = UseCountrySpecificData();
 
     console.log(worldWideData);
 
-    if (!caseWithDatesDataLoading) {
+    if (!worldWideDataIsLoading && !caseWithDatesDataLoading && !countryLoading) {
         // Extract dates from one of the categories (e.g., cases)
-        const dates = Object.keys(caseWithDatesData.cases);
+        const dates = Object.keys(caseWithDatesData?.cases);
 
         // Transform data into an array of objects
         const chartData = dates.map(date => ({
@@ -31,15 +31,15 @@ const ChartsAnsMaps = () => {
                 <div className='text-center space-y-10'>
                     <div>
                         <h1 className='font-serif text-4xl text-[#555]'>Coronavirus Cases:</h1>
-                        <p className='text-5xl text-[#aaa] font-bold'>{worldWideData.cases.toLocaleString()}</p>
+                        <p className='text-5xl text-[#aaa] font-bold'>{worldWideData?.cases.toLocaleString()}</p>
                     </div>
                     <div>
                         <h1 className='font-serif text-4xl text-[#555]'>Deaths:</h1>
-                        <p className='text-5xl text-[#696969] font-bold'>{worldWideData.deaths.toLocaleString()}</p>
+                        <p className='text-5xl text-[#696969] font-bold'>{worldWideData?.deaths.toLocaleString()}</p>
                     </div>
                     <div>
                         <h1 className='font-serif text-4xl text-[#555]'>Recovered:</h1>
-                        <p className='text-5xl text-[#8ACA2B] font-bold'>{worldWideData.recovered.toLocaleString()}</p>
+                        <p className='text-5xl text-[#8ACA2B] font-bold'>{worldWideData?.recovered.toLocaleString()}</p>
                     </div>
                 </div>
                 {/* case with dates */}
