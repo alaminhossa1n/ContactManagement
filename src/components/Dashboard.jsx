@@ -15,7 +15,7 @@ const Dashboard = () => {
             {/* Left Side - Drawer */}
             <div className="bg-gray-800 w-full md:w-1/4">
                 <div className="py-4">
-                    <h1 className="text-white text-xl font-bold px-4 mb-4">Admin Panel</h1>
+                    <h1 className="text-white text-xl font-bold px-4 mb-4">Contact Management</h1>
                     <ul>
                         <li
                             className={`cursor-pointer px-4 py-2 text-white ${selectedOption === 'contact' ? 'bg-blue-500' : ''

@@ -11,8 +11,6 @@ const ChartsAnsMaps = () => {
     const [caseWithDatesData, caseWithDatesDataLoading] = UseCaseWithDatesData();
     const [countrySpecificData, countryLoading] = UseCountrySpecificData();
 
-    console.log(worldWideData);
-
     if (!worldWideDataIsLoading && !caseWithDatesDataLoading && !countryLoading) {
         // Extract dates from one of the categories (e.g., cases)
         const dates = Object.keys(caseWithDatesData?.cases);
