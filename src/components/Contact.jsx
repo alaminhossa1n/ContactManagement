@@ -5,7 +5,9 @@ import { useState } from 'react';
 
 const Contact = () => {
 
-    const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem('contacts') || []))
+    // const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem('contacts') || []));
+    const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem('contacts') || JSON.stringify([])));
+
 
     // create contact 
     const handleCreateContact = async () => {
